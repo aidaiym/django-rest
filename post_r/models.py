@@ -7,6 +7,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Post(models.Model):
     title = models.CharField(max_length=150)
     content = models.TextField()
@@ -14,6 +15,5 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
-
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title
